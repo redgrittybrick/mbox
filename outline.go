@@ -1,10 +1,10 @@
 package mbox
 
 import (
-	"io"
-	"strings"
 	"github.com/emersion/go-message"
 	_ "github.com/emersion/go-message/charset"
+	"io"
+	"strings"
 )
 
 func Outline(msg string) (string, string) {
@@ -38,19 +38,19 @@ func Outline(msg string) (string, string) {
 			switch t {
 			case "text/plain", "text/html":
 				/*
-				b, _ := io.ReadAll(p.Body)
-				sbt.WriteString("================ text part ================\n")
-				sbt.WriteString(string(b))
-				sbt.WriteString("-------------------------------------------\n")
+					b, _ := io.ReadAll(p.Body)
+					sbt.WriteString("================ text part ================\n")
+					sbt.WriteString(string(b))
+					sbt.WriteString("-------------------------------------------\n")
 				*/
 			case "multipart/alternative":
 				// BUG - doing io.ReadAll(p.Body) here steals from the library parse
-				
+
 				b, _ := io.ReadAll(p.Body)
-				o,t := Outline(string(b))
+				o, t := Outline(string(b))
 				sbo.WriteString(o)
 				sbt.WriteString(t)
-				
+
 			}
 
 		}
@@ -61,10 +61,10 @@ func Outline(msg string) (string, string) {
 		case "text/plain", "text/html":
 			// BUG
 			/*
-			b, _ := io.ReadAll(m.Body)
-			sbt.WriteString("================ text part ================\n")
-			sbt.WriteString(string(b))
-			sbt.WriteString("-------------------------------------------\n")
+				b, _ := io.ReadAll(m.Body)
+				sbt.WriteString("================ text part ================\n")
+				sbt.WriteString(string(b))
+				sbt.WriteString("-------------------------------------------\n")
 			*/
 		}
 	}
