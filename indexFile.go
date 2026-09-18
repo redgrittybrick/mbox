@@ -237,10 +237,25 @@ func IndexFile(fileName string) (MsgList, error) {
 		endByte += int64(len(line) + 2) // assume CR LF line separator
 	} // next line
 
+	// include final message from file (if any)
+	if len(h.to) > 0 { // TODO avoid code repeat
+		list = append(list, MsgInfo{
+			date:      parseDate(h),
+			to:        h.to,
+			from:      h.from,
+			subject:   h.subject,
+			linePos:   lineNo, // TODO: this is end of msg not start.
+			startByte: startByte,
+			endByte:   endByte - 1, // Not sure why I am out by 1 - CRLF issue?
+			size:      int(endByte - startByte),
+		})
+	}
+
 	if err := scanner.Err(); err != nil {
 		return list, err
 	}
-	log.Printf("--%d--lines processed in %s\n", lineNo, fileName)
+	log.Printf("%d lines processed in %s\n", lineNo, fileName)
+	log.Printf("%d messages found\n", len(list))
 	return list, nil
 }
 
