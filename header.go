@@ -1,12 +1,12 @@
 package mbox
 
 import (
-	"bufio"
+	//	"bufio"
 	"fmt"
-	"log"
+	//	"log"
 	"os"
-	"strconv"
-	"strings"
+	// "strconv"
+	// "strings"
 )
 
 // -------------------------------------------------------------
@@ -46,6 +46,7 @@ type fileInfo struct {
 
 type fileInfos map[rune]fileInfo
 
+/*
 func (fis *fileInfos) Read() {
 	m := *fis
 	f, err := os.Open(fileIndexName)
@@ -74,6 +75,7 @@ func (fis *fileInfos) Read() {
 	}
 
 }
+*/
 
 func (fis fileInfos) Write() {
 	f, err := os.Create(fileIndexName)

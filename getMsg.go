@@ -3,13 +3,12 @@ package mbox
 import (
 	"fmt"
 	"io"
-	"log"
 	"os"
 )
 
 // reads mbox file skipping to specific message
 func GetMsg(path string, startByte, endByte int64) (string, error) {
-	log.Printf("Seeking %d %d in '%s'", startByte, endByte, path)
+	//log.Printf("Seeking %d %d in '%s'", startByte, endByte, path)
 
 	f, err := os.Open(path)
 	if err != nil {
