@@ -15,7 +15,7 @@ func GetMsg(path string, startByte, endByte int64) (string, error) {
 	}
 	defer f.Close()
 
-	_, err := f.Seek(startByte, io.SeekStart)
+	_, err = f.Seek(startByte, io.SeekStart)
 	if err != nil {
 		return "", err
 	}
