@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// Tests the parsing by parseContentType()  of the `Content-Type` header
 func TestContent(t *testing.T) {
 	for _, example := range strings.Split(examples, "\n") {
 		if len(example) > 0 {
