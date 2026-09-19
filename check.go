@@ -1,11 +1,13 @@
 package mbox
 
 import (
-	"log"
+	"fmt"
+	"os"
 )
 
 func check(err error, context string) {
 	if err != nil {
-		log.Fatal(err.Error() + "[" + context + "]")
+		fmt.Println(err.Error() + "[" + context + "]")
+		os.Exit(9)
 	}
 }
