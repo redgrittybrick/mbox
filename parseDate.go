@@ -26,8 +26,6 @@ import (
 	"unicode"
 )
 
-// const idw = "2006-01-02 15:04:05 -0700"
-const idw = "2006-01-02 15:04"
 
 // Tries to get msg date from "Date:" or "Received:" headers or initial "From "
 func parseDate(h header) string {
@@ -37,7 +35,7 @@ func parseDate(h header) string {
 		if len(d) > 0 {
 			t, err := mail.ParseDate(fixDate(d))
 			if err == nil {
-				return t.UTC().Format(idw)
+				return t.UTC().Format("2006-01-02 15:04")
 			}
 			cause = err.Error()
 		}
