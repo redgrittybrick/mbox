@@ -1,3 +1,8 @@
+/*
+type Parser exists only to hold a log level value to enable this library to use
+the system log library without disrupting library users use of system log
+methods
+*/
 package mbox
 
 import (
@@ -9,11 +14,13 @@ type Parser struct {
 	logLevel int
 }
 
+// Constructor
 func New() *Parser {
 	p := Parser{}
 	return &p
 }
 
+// Setter for log level
 func (p *Parser) LogLevel(level int) *Parser {
 	p.logLevel = level
 	return p
