@@ -51,7 +51,7 @@ func (m *MsgInfo) To() string {
 	return m.to
 }
 
-// returns readable for of "From:" header
+// returns readable form of "From:" header
 func (m *MsgInfo) From() string {
 	from := m.from
 
@@ -135,7 +135,6 @@ func IndexFile(fileName string) (MsgList, error) {
 			if len(line) > 0 && line[0] != ' ' && line[0] != '\t' { // not a continuation
 				if i := strings.IndexRune(line, ':'); i > -1 { // poss key:value
 					key = line[:i]
-					//log.Printf("--key--%s--", key)
 					switch key {
 					case "From", "FROM":
 						h.from = strings.TrimSpace(line[5:])
@@ -159,7 +158,6 @@ func IndexFile(fileName string) (MsgList, error) {
 			}
 
 			if len(line) > 0 && (line[0] == ' ' || line[0] == '\t') { // Continuation?
-				//extra := strings.TrimSpace(line)
 				extra := line
 				switch key {
 				case "From", "FROM":
@@ -222,14 +220,13 @@ func IndexFile(fileName string) (MsgList, error) {
 					endByte:   endByte - 1, // Not sure why I am out by 1 - CRLF issue?
 					size:      int(endByte - startByte),
 				})
-				//printLine(h, bcount)
 				h.Reset()
 				boundary = ""
 				state = inHeader
 				startByte = endByte // + 1 // See above endByte issue
 				log.Printf("=== Start of next message === '%s'\n", line)
 				if len(line) > 7 && line[:7] == "From - " {
-					h.fromDate = fromDate(line) // pseudo header, last resort for a msg date
+					h.fromDate = fromDate(line) // pseudo header, last resort for msg date
 				}
 			}
 		} // state switch
