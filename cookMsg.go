@@ -75,7 +75,6 @@ type ContentType struct {
 
 // get `multipart/mixed` from `multipart/mixed; boundary="abcd"`
 func parseContentType(header string) ContentType {
-	//fmt.Printf("\nParsing '%s'\n", header)
 	var ct ContentType
 	k := "content-type" // Content-Type: type; key=value; key=value  ...
 	inQuotes := false
