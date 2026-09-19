@@ -11,7 +11,7 @@ You can use this library to read those cached emails, or old or backed-up
 copies.  This can be useful, for example, if your PC has died and you need to
 recover files from the hard disk or a backup. You can then use this simpler
 program to review messages without needing to reinstall Thunderbird and without
-any risk of Thunderbird overwriting the files or prforming any clean up that
+any risk of Thunderbird overwriting the files or performing any clean up that
 might delete old messages.
 
 ## Usage
