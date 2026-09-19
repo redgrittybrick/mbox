@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// Returns a string illustrating structure of a multipart message
 func Outline(msg string) (string, string) {
 	var sbo, sbt strings.Builder
 
