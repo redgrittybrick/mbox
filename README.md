@@ -16,14 +16,14 @@ might delete old messages.
 
 ## Usage
 
-See example/ folder
+See `example/` folder
 
 ```
 parser := mbox.New()
-msgs, err := parser.IndexFile(fileName)
+msgs, err := parser.IndexFile(fileName)       // index of messages, no contents
 
 strt, end := msgs[n].Start(), msgs[n].End()
-text, err := mbox.GetMsg(fileName, strt, end)
-cooked, err := mbox.CookMessage(text)
-outline, plain := mbox.Outline(text)
+text, err := mbox.GetMsg(fileName, strt, end) // raw text
+cooked, err := mbox.CookMessage(text)         // readable contents
+outline, plain := mbox.Outline(text)          // multipart message structure
 ```
