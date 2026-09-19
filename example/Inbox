@@ -1,19 +1,43 @@
-From - 30 June 2026 18:00
+From - Mon Jun 30 18:01:00 2026
 Subject: Invite
 From: Joe
 To: Kim
-Date: Mon, 30 Jun 2026 18:01:00 +0000
+Date: Mon, 30 Jun 2026 18:00:00 +0000
 
 See you Tuesday
 Joe.
 
-From - 01 July 2026 09:30
+From - Tue Jul 01 09:31:00 2026
+Received: from DHV ([192.168.55.8]); Tue, 01 Jul 2026 09:30:57 +0000
 Subject: Northbrook
 From: Sue
 To: Joe
-Date: Tue, 1 Jul 2026 09:31:00 +0000
+
 
 Viewing arranged for next Friday
 
 Sue.
+
+From - Wed Jul 02 12:51:00 2026
+Subject: Heating
+From: Sam
+To: Joe
+Content-Type: multipart/alternative; boundary="WMWMWMWM"
+
+--WMWMWMWM
+Content-Type: text/plainl charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+See https://www.example/com/new%3asolution
+Sam.
+--WMWMWMWM
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><title>Heating</title></head><body>
+<p>See https://www.example/com/new%3asolution</p>
+<p>Sam.</p>
+</body></html>
+--WMWMWMWM--
+
 
